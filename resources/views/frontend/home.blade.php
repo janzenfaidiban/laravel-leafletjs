@@ -15,7 +15,7 @@
                 <div class="card">
                     <div class="card-header">Card title</div>
                     <div class="card-body">
-                        <div id="map" style="height: 500px"></div>
+                        <div id="map" style="height: 700px"></div>
                     </div>
                 </div>
             </div>
@@ -94,9 +94,8 @@
             @foreach ($spot as $item)
                 L.marker([{{ $item->coordinates }}])
                     .bindPopup(
-                        "<div class='my-2'><img src='{{ $item->getImageAsset() }}' class='img-fluid' width='700px'></div>" +
-                        "<div class='my-2'>{{ $item->name }}</div>" +
-                        "<div><a href='{{ route('detail-spot',$item->slug) }}' class='btn btn-link-info'>Detail Spot</a></div>"
+                        "<div class='my-2'><a href='{{ route('detail-spot',$item->slug) }}'><img src='{{ $item->getImageAsset() }}' class='img-fluid' width='700px'></a></div>" +
+                        "<div class='my-2'>{{ $item->name }}</div>"
                     )
                     .addTo(map)
             @endforeach
