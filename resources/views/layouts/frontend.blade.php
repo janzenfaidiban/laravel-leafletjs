@@ -20,6 +20,11 @@
 <body>
     {{--  --}}
     @yield('content')
+    <footer>
+        <div class="text-center">
+            <a href="{{ route('home') }}" class="btn btn-dark">Admin Panel</a>
+        </div>
+    </footer>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm" crossorigin="anonymous">
     </script>
