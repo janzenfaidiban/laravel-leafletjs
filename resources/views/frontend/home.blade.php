@@ -49,7 +49,7 @@
 
         var map = L.map('map', {
             center: [{{ $centerPoint->coordinates }}],
-            zoom: 10,
+            zoom: 6,
             layers: [osm],
             fullscreenControl: {
                 pseudoFullscreen: false
@@ -95,8 +95,8 @@
                 L.marker([{{ $item->coordinates }}])
                     .bindPopup(
                         "<div class='my-2'><img src='{{ $item->getImageAsset() }}' class='img-fluid' width='700px'></div>" +
-                        "<div class='my-2'><strong>Nama Spot : </strong> <br>{{ $item->name }}</div>" +
-                        "<div><a href='{{ route('detail-spot',$item->slug) }}' class='btn btn-outline-info'>Detail Spot</a></div>"
+                        "<div class='my-2'>{{ $item->name }}</div>" +
+                        "<div><a href='{{ route('detail-spot',$item->slug) }}' class='btn btn-link-info'>Detail Spot</a></div>"
                     )
                     .addTo(map)
             @endforeach

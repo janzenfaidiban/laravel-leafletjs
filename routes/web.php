@@ -26,4 +26,6 @@ Route::middleware(['auth'])->group(function(){
     
     Route::resource('centre-point',(\App\Http\Controllers\Backend\CentrePointController::class));
     Route::resource('spot',(\App\Http\Controllers\Backend\SpotController::class));
+
+    Route::resource('city',(\App\Http\Controllers\Backend\CityController::class));
 });
